@@ -6,7 +6,7 @@ package com.children.annotation;
 import java.lang.annotation.*;
 
 /**
- * 注解组合别名
+ * 注解组合别名232
  * @author wb-lcj442691
  * @version $Id: AliasFor.java, v 0.1 2018年11月14日 9:00 wb-lcj442691 Exp $
  */
