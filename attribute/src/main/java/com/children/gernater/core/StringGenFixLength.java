@@ -15,9 +15,9 @@ public class StringGenFixLength extends  StringGenAbstract {
   private  String textSource=null;
     public Integer fixLength=null;
 
-  public StringGenFixLength(Integer fixLength){
-      super.canNull=false;
+  public StringGenFixLength(Integer fixLength,String source){
       this.fixLength=fixLength;
+      this.textSource=source;
   }
 
     @Override

@@ -14,14 +14,15 @@ public class StringGenRandomLength  extends  StringGenAbstract{
     private  String textSource=null;
     public Integer randomLength=null;
 
-    public StringGenRandomLength(int maxlen,int minlen,int length){
+    public StringGenRandomLength(int maxlen,int minlen,Integer randomLength,String source){
         super.canNull=false;
         super.maxLength=maxlen;
         super.minLength=minlen;
-        this.randomLength=length;
+        this.randomLength=randomLength;
         if(randomLength==null||randomLength==0){
-            randomLength=maxlen;
+            this.randomLength=maxlen;
         }
+        this.textSource=source;
     }
     @Override
     public String gen() {

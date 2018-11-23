@@ -18,11 +18,10 @@ import java.lang.annotation.*;
 @Target(value = ElementType.FIELD)
 @Inherited
 public @interface IntegerDesc {
+    boolean  canNull() default  false;
     int  maxValue() default Integer.MAX_VALUE;
     int  minValue()  default  Integer.MIN_VALUE;
-    boolean  canNull() default  false;
     int [] valueEnum() default {};
-    String   pattern()   default "";
     /**
      * 数据校验
      */
