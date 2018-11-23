@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.chidren.hometown.persistence.HumanMapper">
+	<!-- 返回值映射map -->
+	<resultMap id="human" type="com.chidren.hometown.dataobject.HumanDO">
+		    <result property="id" column="id" />
+			<result property="gmtCreate" column="gmt_create" />
+			<result property="gmtModified" column="gmt_modified" />
+			<result property="fullname" column="fullname" />
+			<result property="englishName" column="english_name" />
+			<result property="registerReside" column="register_reside" />
+			<result property="identification" column="identification" />
+			<result property="nation" column="nation" />
+			<result property="sex" column="sex" />
+			<result property="birthday" column="birthday" />
+			<result property="headImage" column="head_image" />
+			<result property="politicalOutlook" column="political_outlook" />
+			<result property="bloodType" column="blood_type" />
+			<result property="height" column="height" />
+			<result property="summary" column="summary" />
+			<result property="email" column="email" />
+			<result property="mobile" column="mobile" />
+			<result property="marryed" column="marryed" />
+			<result property="joinworkTime" column="joinwork_time" />
+			<result property="education" column="education" />
+			<result property="humanStatus" column="human_status" />
+	</resultMap>
+
+	<!-- 查询字段公共sql -->
+	<sql id="select_all">
+		SELECT
+			 id, 
+			 gmt_create, 
+			 gmt_modified, 
+			 fullname, 
+			 english_name, 
+			 register_reside, 
+			 identification, 
+			 nation, 
+			 sex, 
+			 birthday, 
+			 head_image, 
+			 political_outlook, 
+			 blood_type, 
+			 height, 
+			 summary, 
+			 email, 
+			 mobile, 
+			 marryed, 
+			 joinwork_time, 
+			 education, 
+			 human_status 
+			FROM human record
+	</sql>
+
+	<sql id="where">
+		where 1=1
+			<if test = "id != null and id != ''">
+				and id  = #{id}
+			</if>
+			<if test = "gmtCreate != null and gmtCreate != ''">
+				and gmt_create  = #{gmtCreate}
+			</if>
+			<if test = "gmtModified != null and gmtModified != ''">
+				and gmt_modified  = #{gmtModified}
+			</if>
+			<if test = "fullname != null and fullname != ''">
+				and fullname  = #{fullname}
+			</if>
+			<if test = "englishName != null and englishName != ''">
+				and english_name  = #{englishName}
+			</if>
+			<if test = "registerReside != null and registerReside != ''">
+				and register_reside  = #{registerReside}
+			</if>
+			<if test = "identification != null and identification != ''">
+				and identification  = #{identification}
+			</if>
+			<if test = "nation != null and nation != ''">
+				and nation  = #{nation}
+			</if>
+			<if test = "sex != null and sex != ''">
+				and sex  = #{sex}
+			</if>
+			<if test = "birthday != null and birthday != ''">
+				and birthday  = #{birthday}
+			</if>
+			<if test = "headImage != null and headImage != ''">
+				and head_image  = #{headImage}
+			</if>
+			<if test = "politicalOutlook != null and politicalOutlook != ''">
+				and political_outlook  = #{politicalOutlook}
+			</if>
+			<if test = "bloodType != null and bloodType != ''">
+				and blood_type  = #{bloodType}
+			</if>
+			<if test = "height != null and height != ''">
+				and height  = #{height}
+			</if>
+			<if test = "summary != null and summary != ''">
+				and summary  = #{summary}
+			</if>
+			<if test = "email != null and email != ''">
+				and email  = #{email}
+			</if>
+			<if test = "mobile != null and mobile != ''">
+				and mobile  = #{mobile}
+			</if>
+			<if test = "marryed != null and marryed != ''">
+				and marryed  = #{marryed}
+			</if>
+			<if test = "joinworkTime != null and joinworkTime != ''">
+				and joinwork_time  = #{joinworkTime}
+			</if>
+			<if test = "education != null and education != ''">
+				and education  = #{education}
+			</if>
+			<if test = "humanStatus != null and humanStatus != ''">
+				and human_status  = #{humanStatus}
+			</if>
+	</sql>
+
+
+	
+	<!-- 新增 -->
+	<insert id="insertOne" parameterType="com.chidren.hometown.dataobject.HumanDO">
+		insert into human
+		<trim prefix="(" suffix=")" suffixOverrides="," >
+				<if test = "id != null and id != ''">
+					id,
+				</if>
+				<if test = "gmtCreate != null and gmtCreate != ''">
+					gmt_create,
+				</if>
+				<if test = "gmtModified != null and gmtModified != ''">
+					gmt_modified,
+				</if>
+				<if test = "fullname != null and fullname != ''">
+					fullname,
+				</if>
+				<if test = "englishName != null and englishName != ''">
+					english_name,
+				</if>
+				<if test = "registerReside != null and registerReside != ''">
+					register_reside,
+				</if>
+				<if test = "identification != null and identification != ''">
+					identification,
+				</if>
+				<if test = "nation != null and nation != ''">
+					nation,
+				</if>
+				<if test = "sex != null and sex != ''">
+					sex,
+				</if>
+				<if test = "birthday != null and birthday != ''">
+					birthday,
+				</if>
+				<if test = "headImage != null and headImage != ''">
+					head_image,
+				</if>
+				<if test = "politicalOutlook != null and politicalOutlook != ''">
+					political_outlook,
+				</if>
+				<if test = "bloodType != null and bloodType != ''">
+					blood_type,
+				</if>
+				<if test = "height != null and height != ''">
+					height,
+				</if>
+				<if test = "summary != null and summary != ''">
+					summary,
+				</if>
+				<if test = "email != null and email != ''">
+					email,
+				</if>
+				<if test = "mobile != null and mobile != ''">
+					mobile,
+				</if>
+				<if test = "marryed != null and marryed != ''">
+					marryed,
+				</if>
+				<if test = "joinworkTime != null and joinworkTime != ''">
+					joinwork_time,
+				</if>
+				<if test = "education != null and education != ''">
+					education,
+				</if>
+				<if test = "humanStatus != null and humanStatus != ''">
+					human_status
+				</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides="," >
+				<if test = "id != null and id != ''">
+					#{id},
+				</if>
+				<if test = "gmtCreate != null and gmtCreate != ''">
+					#{gmtCreate},
+				</if>
+				<if test = "gmtModified != null and gmtModified != ''">
+					#{gmtModified},
+				</if>
+				<if test = "fullname != null and fullname != ''">
+					#{fullname},
+				</if>
+				<if test = "englishName != null and englishName != ''">
+					#{englishName},
+				</if>
+				<if test = "registerReside != null and registerReside != ''">
+					#{registerReside},
+				</if>
+				<if test = "identification != null and identification != ''">
+					#{identification},
+				</if>
+				<if test = "nation != null and nation != ''">
+					#{nation},
+				</if>
+				<if test = "sex != null and sex != ''">
+					#{sex},
+				</if>
+				<if test = "birthday != null and birthday != ''">
+					#{birthday},
+				</if>
+				<if test = "headImage != null and headImage != ''">
+					#{headImage},
+				</if>
+				<if test = "politicalOutlook != null and politicalOutlook != ''">
+					#{politicalOutlook},
+				</if>
+				<if test = "bloodType != null and bloodType != ''">
+					#{bloodType},
+				</if>
+				<if test = "height != null and height != ''">
+					#{height},
+				</if>
+				<if test = "summary != null and summary != ''">
+					#{summary},
+				</if>
+				<if test = "email != null and email != ''">
+					#{email},
+				</if>
+				<if test = "mobile != null and mobile != ''">
+					#{mobile},
+				</if>
+				<if test = "marryed != null and marryed != ''">
+					#{marryed},
+				</if>
+				<if test = "joinworkTime != null and joinworkTime != ''">
+					#{joinworkTime},
+				</if>
+				<if test = "education != null and education != ''">
+					#{education},
+				</if>
+				<if test = "humanStatus != null and humanStatus != ''">
+					#{humanStatus}
+				</if>
+		</trim>
+	</insert>
+	
+
+	
+</mapper>
